@@ -48,7 +48,7 @@ public class AnthropicUsage
 public class BenchmarkConfig
 {
     public string? ApiKey { get; set; }
-    public string Model { get; set; } = "MiniMax-M2.5-highspeed";
+    public string Model { get; set; } = "MiniMax-M2.5";
     public string BaseUrl { get; set; } = "https://api.minimax.io/anthropic/v1/messages";
     public int Iterations { get; set; } = 3;
     public int MaxTokens { get; set; } = 1000;
@@ -79,7 +79,7 @@ public class Program
     public static async Task Main(string[] args)
     {
         Console.WriteLine("╔════════════════════════════════════════════════════════════════╗");
-        Console.WriteLine("║   MiniMax M2.5-HighSpeed Token Per Second Benchmark Tool      ║");
+        Console.WriteLine("║   MiniMax M2.5-HighSpeed Token Per Second Benchmark Tool       ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════════════╝");
         Console.WriteLine();
 
@@ -297,7 +297,7 @@ public class Program
     private static void PrintSummary(List<BenchmarkResult> results, BenchmarkConfig config)
     {
         Console.WriteLine("╔════════════════════════════════════════════════════════════════╗");
-        Console.WriteLine("║                        SUMMARY                                ║");
+        Console.WriteLine("║                        SUMMARY                                 ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════════════╝");
         
         var avgTps = results.Average(r => r.GenerationTokensPerSecond);
@@ -327,7 +327,7 @@ public class Program
         Console.WriteLine("  ------|--------|---------|--------");
         foreach (var r in results)
         {
-            Console.WriteLine($"  {r.Iteration,4}  | {r.TokensGenerated,6} | {r.TimeSeconds,7:F2} | {r.TokensPerSecond,7:F2}");
+            Console.WriteLine($"  {r.Iteration,4}  | {r.TokensGenerated,6} | {r.TimeSeconds,7:F2} | {r.GenerationTokensPerSecond,7:F2}");
         }
         
         Console.WriteLine();
