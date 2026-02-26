@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MiniMaxTokenBenchmark": {
+      "commandName": "Project",
+      "commandLineArgs": "-s"
+    }
+  }
+}
