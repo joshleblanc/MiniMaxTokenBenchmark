@@ -48,7 +48,7 @@ public class AnthropicUsage
 public class BenchmarkConfig
 {
     public string? ApiKey { get; set; }
-    public string Model { get; set; } = "MiniMax-M2.5";
+    public string Model { get; set; } = "MiniMax-M2.5-highspeed";
     public string BaseUrl { get; set; } = "https://api.minimax.io/anthropic/v1/messages";
     public int Iterations { get; set; } = 3;
     public int MaxTokens { get; set; } = 1000;
