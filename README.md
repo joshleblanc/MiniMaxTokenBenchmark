@@ -98,8 +98,4 @@ Benchmark completed!
 
 1. Makes streaming requests to MiniMax's Anthropic-compatible API
 2. Captures `usage.output_tokens` from the `message_delta` event for accurate token counting
-3. Calculates TPS as: `output_tokens / total_time`
-
-### Note on Timing
-
-The TPS includes network latency (time to send request + receive response). For a more accurate token generation speed, subtract the estimated first token latency (~2-4 seconds depending on your network and model).
+3. Calculates TPS as: `output_tokens / (total_time - time to first token)`
