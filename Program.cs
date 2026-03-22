@@ -5,7 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 /// <summary>
-/// MiniMax M2.5-HighSpeed Token Per Second Benchmark Tool
+/// MiniMax M2.7-HighSpeed Token Per Second Benchmark Tool
 /// Uses Anthropic-compatible API with MiniMax
 /// </summary>
 
@@ -48,7 +48,7 @@ public class AnthropicUsage
 public class BenchmarkConfig
 {
     public string? ApiKey { get; set; }
-    public string Model { get; set; } = "MiniMax-M2.5-highspeed";
+    public string Model { get; set; } = "MiniMax-M2.7-highspeed";
     public string BaseUrl { get; set; } = "https://api.minimax.io/anthropic/v1/messages";
     public int Iterations { get; set; } = 3;
     public int MaxTokens { get; set; } = 1000;
@@ -79,7 +79,7 @@ public class Program
     public static async Task Main(string[] args)
     {
         Console.WriteLine("╔════════════════════════════════════════════════════════════════╗");
-        Console.WriteLine("║   MiniMax M2.5-HighSpeed Token Per Second Benchmark Tool       ║");
+        Console.WriteLine("║   MiniMax M2.7-HighSpeed Token Per Second Benchmark Tool       ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════════════╝");
         Console.WriteLine();
 
@@ -179,7 +179,7 @@ public class Program
         Console.WriteLine();
         Console.WriteLine("Options:");
         Console.WriteLine("  --api-key, -k <key>       MiniMax API key (or set MINIMAX_API_KEY env var)");
-        Console.WriteLine("  --model, -m <model>       Model name (default: MiniMax-M2.5-highspeed)");
+        Console.WriteLine("  --model, -m <model>       Model name (default: MiniMax-M2.7-highspeed)");
         Console.WriteLine("  --iterations, -i <n>      Number of iterations (default: 3)");
         Console.WriteLine("  --max-tokens, -t <n>      Maximum tokens to generate (default: 1000)");
         Console.WriteLine("  --prompt, -p <text>       Custom prompt");
